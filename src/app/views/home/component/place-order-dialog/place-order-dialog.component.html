@@ -1,0 +1,58 @@
+<form [formGroup] = "placeOrderForm" (ngSubmit) = "placeOrder()">
+    <app-custom-dialog [title] = "'Place Order'">
+        <div content-container class="scroll-container">
+            <div class="section-container d-flex align-items-center justify-content-between">
+                <div class="full-width m-10">
+                    <mat-form-field class="full-width">
+                        <mat-label>Customer ID</mat-label>
+                        <input matInput required placeholder="Customer ID" formControlName = "customerId" readonly>
+                        <mat-error *ngIf = "placeOrderForm.controls['customerId'].hasError('required')">Customer ID is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="full-width m-10">
+                    <mat-form-field class="full-width">
+                        <mat-label>Order ID</mat-label>
+                        <input matInput required placeholder="Order ID" formControlName = "orderId" readonly>
+                        <mat-error *ngIf = "placeOrderForm.controls['orderId'].hasError('required')">Order ID is required</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="section-container d-flex align-items-center justify-content-between">
+                <div class="full-width m-10">
+                    <mat-form-field class="full-width">
+                        <mat-label>Product ID</mat-label>
+                        <input matInput required placeholder="Product ID" formControlName = "productId" readonly>
+                        <mat-error *ngIf = "placeOrderForm.controls['productId'].hasError('required')">Product ID is required</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="section-container d-flex align-items-center justify-content-between">
+                <div class="full-width m-10">
+                    <mat-form-field class="full-width">
+                        <mat-label>Product Name</mat-label>
+                        <input matInput required placeholder="Product Name" formControlName = "title" readonly>
+                        <mat-error *ngIf = "placeOrderForm.controls['title'].hasError('required')">Title is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="full-width m-10">
+                    <mat-form-field floatLabel="always" class="full-width">
+                        <mat-label>Quantity Needed</mat-label>
+                        <input matInput required placeholder="Quantity Needed" type="number" formControlName = "quantity" class="example-right-align">
+                        <span matPrefix>$&nbsp;</span>
+                        <span matSuffix [innerHTML] = "'/'+' '+numberOfQuantity"></span>
+                        <mat-error *ngIf = "placeOrderForm.controls['quantity'].hasError('required')">Quantity is required</mat-error>
+                        <mat-error *ngIf = "placeOrderForm.controls['quantity'].hasError('min')">Quantity should be greater than 0</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div footer-container class="d-flex justify-content-end align-items-center text-end full-width">
+            <button mat-raised-button color="primary" type="submit">
+                Order
+            </button>
+            <button mat-raised-button mat-dialog-close color="warn">
+                Cancel
+            </button>
+        </div>
+    </app-custom-dialog>
+</form>

@@ -1,0 +1,19 @@
+<div class="d-flex align-items-center justify-content-between header-container">
+    <div>
+        <h2 mat-dialog-title class="m-0" [innerHTML] = "title"></h2>
+    </div>
+    <div>
+        <button mat-icon-button mat-dialog-close><mat-icon>close</mat-icon></button>
+    </div>
+</div>
+<mat-dialog-content class="mat-typography content-height">
+  <ng-content select = "[content-container]">
+
+  </ng-content>
+</mat-dialog-content>
+<mat-divider></mat-divider>
+<mat-dialog-actions class="footer-container">
+    <ng-content select = "[footer-container]">
+
+    </ng-content>
+</mat-dialog-actions>

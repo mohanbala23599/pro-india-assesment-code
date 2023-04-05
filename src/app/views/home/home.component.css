@@ -1,0 +1,42 @@
+.full-width{
+    width: 100%;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.justify-content-end{
+    justify-content: end;
+}
+
+.justify-content-between{
+    justify-content: space-between;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+.m-10{
+    margin: 10px;
+}
+
+.m-0{
+    margin: 0px;
+}
+
+.m-l-10{
+    margin-left: 10px;
+}
+
+.header-section-container{
+    background-color: #ffdb61;
+    color: #ffffff;
+    position: sticky;
+    top: 0px;
+}
+
+.content-container{
+    margin: 30px;
+}

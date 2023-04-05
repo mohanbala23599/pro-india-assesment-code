@@ -1,0 +1,26 @@
+table {
+    width: 100%;
+}
+
+.mat-header-row{
+    background-color: #9d69ab !important;
+}
+
+th.mat-header-cell{
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.mat-paginator{
+    background-color: #9d69ab !important;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+:host::ng-deep.mat-select-value{
+    color: #ffffff !important;
+}
+
+:host::ng-deep.mat-sort-header-arrow{
+    color: #ffffff !important;
+}

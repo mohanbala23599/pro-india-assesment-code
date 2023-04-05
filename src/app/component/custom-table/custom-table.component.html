@@ -1,0 +1,30 @@
+<div>
+    <mat-form-field>
+        <mat-label>Search for</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search for" #input>
+    </mat-form-field>
+    <span>items in the product list table</span>
+</div>
+<div class="mat-elevation-z1">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- common Column -->
+        <ng-container *ngFor="let col of displayedColumns; let i = index" matColumnDef={{col}}>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>{{col | uppercase}}</th>
+            <ng-container *ngIf="col != 'actions'">
+                <td mat-cell *matCellDef="let element">{{element[col]}}</td>
+            </ng-container>
+            <ng-container *ngIf="col == 'actions'">
+                <td mat-cell *matCellDef="let element"><button mat-icon-button
+                        (click)="iconButtonOnClick(element)"><mat-icon>{{element[col]}}</mat-icon></button></td>
+            </ng-container>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="10" showFirstLastButtons
+        aria-label="Product list pagination">
+    </mat-paginator>
+</div>

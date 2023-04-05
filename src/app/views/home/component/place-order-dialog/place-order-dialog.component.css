@@ -1,0 +1,40 @@
+.full-width {
+    width: 100%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-between {
+    justify-content: space-around;
+}
+
+.justify-content-end {
+    justify-content: end;
+}
+
+.m-0 {
+    margin: 0px;
+}
+
+.m-10{
+    margin: 10px;
+}
+
+.text-end {
+    text-align: end;
+}
+
+.left-align {
+    text-align: left;
+}
+
+input.left-align::-webkit-outer-spin-button,
+input.left-align::-webkit-inner-spin-button {
+    display: none;
+}

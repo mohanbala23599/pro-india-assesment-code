@@ -1,0 +1,31 @@
+<form [formGroup]="productInformationForm" (ngSubmit) = "addProductToList()">
+    <app-custom-dialog [title] = "'Add Product'">
+        <div content-container class="scroll-container">
+            <div class="section-container d-flex align-items-center justify-content-between">
+                <div class="full-width m-10">
+                    <mat-form-field class="full-width">
+                        <mat-label>Add your product name</mat-label>
+                        <input matInput placeholder="Add your product name" formControlName = "productName" required>
+                        <mat-error *ngIf = "productInformationForm.controls['productName'].hasError('required')">Please enter a product name</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="full-width m-10">
+                    <mat-form-field class="full-width">
+                        <mat-label>Add number of quantity</mat-label>
+                        <input matInput type="number" placeholder="Add number of quantity" required formControlName = "availableQuantity">
+                        <mat-error *ngIf = "productInformationForm.controls['availableQuantity'].hasError('required')">Please enter a quantity</mat-error>
+                        <mat-error *ngIf = "productInformationForm.controls['availableQuantity'].hasError('min')">Quantity need to be greater than 0</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div footer-container class="d-flex justify-content-end align-items-center text-end full-width">
+            <button mat-raised-button color="primary" type="submit">
+                Add
+            </button>
+            <button mat-raised-button mat-dialog-close color="warn">
+                Cancel
+            </button>
+        </div>
+    </app-custom-dialog>
+</form>
